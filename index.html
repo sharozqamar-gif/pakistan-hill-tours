@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pakistan Hill Tours — Murree · Naran · Kaghan · Kashmir</title>
+  <meta name="description" content="Professional tour brochure page for Murree, Naran Kaghan, Kashmir and more. Share a password to preview with clients." />
+  <style>
+    :root{--accent:#0ea5a4;--dark:#071013;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;background:#f7fafc;color:var(--dark)}
+    a{color:inherit}
+
+    /* gate */
+    #gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(7,16,19,0.85), rgba(7,16,19,0.92));color:white;z-index:60}
+    .gate-box{background:rgba(255,255,255,0.05);backdrop-filter:blur(6px);padding:2rem;border-radius:12px;text-align:center;max-width:420px;width:92%}
+    .gate-box input{width:100%;padding:0.75rem;margin-top:0.75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:transparent;color:white}
+    .gate-box button{margin-top:0.75rem;padding:0.6rem 1rem;border-radius:8px;border:none;background:var(--accent);color:white;font-weight:700}
+
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:white;border-bottom:1px solid #e6e9ef;position:sticky;top:0;z-index:40}
+    .brand{display:flex;gap:0.75rem;align-items:center}
+    .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+    nav a{margin-left:1rem;color:var(--dark);text-decoration:none;font-weight:600}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:1.5rem;align-items:center;padding:2.25rem;max-width:1200px;margin:1.25rem auto}
+    .hero-left h1{font-size:clamp(1.6rem,2.8vw,2.6rem);margin-bottom:0.5rem}
+    .hero-left p{color:var(--muted);margin-bottom:1rem}
+    .cta{display:flex;gap:0.6rem}
+    .btn{padding:0.7rem 1rem;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{background:white;border:1px solid #e6e9ef}
+    .hero-right{background:url('images/hero.jpg') center/cover no-repeat;border-radius:12px;height:320px}
+
+    /* grid for locations */
+    .grid{max-width:1200px;margin:0 auto;padding:1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .card{background:var(--card);padding:0;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(10,10,10,0.06)}
+    .card img{width:100%;height:180px;object-fit:cover;display:block}
+    .card-content{padding:1rem}
+    .card h3{margin-bottom:0.4rem}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    /* itinerary / details */
+    .section{max-width:1100px;margin:1.25rem auto;padding:1rem}
+    .two{display:grid;grid-template-columns:1fr 360px;gap:1rem}
+    .meta{background:white;padding:1rem;border-radius:10px}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.5rem}
+    .gallery img{width:100%;height:110px;object-fit:cover;border-radius:8px}
+
+    footer{padding:1.25rem;text-align:center;color:var(--muted)}
+
+    @media (max-width:900px){.hero{grid-template-columns:1fr;padding:1rem}.two{grid-template-columns:1fr}.hero-right{height:220px}}
+  </style>
+</head>
+<body>
+
+  <!-- CLIENT-SIDE GATE (simple password to preview for clients) -->
+  <div id="gate">
+    <div class="gate-box">
+      <div style="font-size:1.15rem;font-weight:700">Private Tour Preview</div>
+      <p style="opacity:0.9;margin-top:0.6rem">Enter the preview password to view the full brochure. (This is client-side only — for demonstration.)</p>
+      <input id="pw" placeholder="Enter password" aria-label="password">
+      <div style="display:flex;gap:0.5rem;justify-content:center">
+        <button id="openBtn" class="btn btn-primary">Preview</button>
+        <button id="demoBtn" class="btn btn-outline">Demo mode</button>
+      </div>
+      <p style="font-size:0.85rem;color:#d1d5db;margin-top:0.6rem">Password (example): <strong>travel2025</strong></p>
+    </div>
+  </div>
+
+  <header>
+    <div class="brand">
+      <div class="logo">PT</div>
+      <div>
+        <div style="font-weight:800">Pakistan Hill Tours</div>
+        <div style="font-size:0.85rem;color:var(--muted)">Murree • Naran • Kaghan • Kashmir</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#packages">Packages</a>
+      <a href="#itinerary">Itinerary</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main aria-live="polite">
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <h1>Discover Murree, Naran &amp; Kashmir</h1>
+        <p class="muted">Tailor-made tours for families, friends and corporate groups. Clean design to present to clients — includes itineraries, galleries and contact form.</p>
+        <div class="cta" style="margin-top:1rem">
+          <button class="btn btn-primary">Request Quote</button>
+          <button class="btn btn-outline">Download PDF</button>
+        </div>
+      </div>
+      <div class="hero-right" role="img" aria-label="mountain hero photo"></div>
+    </section>
+
+    <section id="packages" class="grid">
+      <!-- Cards for locations -->
+      <article class="card">
+        <img src="images/murree.jpg" alt="Murree">
+        <div class="card-content">
+          <h3>Murree — Classic Hill Station</h3>
+          <p class="muted">Short day/weekend packages: Patriata, Mall Road, Chair Lifts, family-friendly stays.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/naran.jpg" alt="Naran Kaghan">
+        <div class="card-content">
+          <h3>Naran &amp; Kaghan — Alpine Lakes</h3>
+          <p class="muted">Explore Saif-ul-Muluk, Lulusar, Babusar Top. Best for summer road trips and photography.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/kashmir.jpg" alt="Kashmir">
+        <div class="card-content">
+          <h3>Azad Kashmir — Valleys &amp; Lakes</h3>
+          <p class="muted">Neelum Valley, Taobat, Keran — river cruises, camping and local culture experiences.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/other.jpg" alt="Other locations">
+        <div class="card-content">
+          <h3>Other Highlights</h3>
+          <p class="muted">Hunza, Skardu, Swat — extended/higher-altitude itineraries with premium stays.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="itinerary" class="section">
+      <h2 style="margin-bottom:0.6rem">Sample 5-day Itinerary (Naran — Kaghan)</h2>
+      <div class="two">
+        <div>
+          <div class="meta">
+            <h3>Day 1 — Islamabad to Naran</h3>
+            <p class="muted">Pickup from Islamabad, scenic drive, check-in at hotel in Naran.</p>
+            <h3 style="margin-top:0.6rem">Day 2 — Saif-ul-Muluk</h3>
+            <p class="muted">Boat ride on Saif-ul-Muluk, photography, local lunch.</p>
+            <h3 style="margin-top:0.6rem">Day 3 — Lulusar &amp; Babusar</h3>
+            <p class="muted">High-altitude lakes, picnic stops, return to Kaghan.</p>
+            <h3 style="margin-top:0.6rem">Day 4 — Explore Kaghan Valley</h3>
+            <p class="muted">Trekking options, village walk, cultural dinner.</p>
+            <h3 style="margin-top:0.6rem">Day 5 — Return to Islamabad</h3>
+            <p class="muted">Leisurely return with stops for photos and souvenirs.</p>
+          </div>
+        </div>
+        <aside>
+          <div class="meta">
+            <h3>Package Highlights</h3>
+            <ul style="margin-top:0.5rem">
+              <li>3-star / 4-star hotel options</li>
+              <li>All transport with experienced drivers</li>
+              <li>Local guides for lakes &amp; treks</li>
+              <li>Meals: breakfast + 2 lunches</li>
+            </ul>
+            <div style="margin-top:1rem">
+              <strong>Price:</strong>
+              <div style="font-size:1.25rem;margin-top:0.35rem">From PKR 35,000 / person</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2 style="margin-bottom:0.6rem">Gallery</h2>
+      <div class="gallery">
+        <img src="images/gallery1.jpg" alt="gallery">
+        <img src="images/gallery2.jpg" alt="gallery">
+        <img src="images/gallery3.jpg" alt="gallery">
+        <img src="images/gallery4.jpg" alt="gallery">
+        <img src="images/gallery5.jpg" alt="gallery">
+        <img src="images/gallery6.jpg" alt="gallery">
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div style="max-width:700px;margin:0 auto;background:white;padding:1rem;border-radius:10px">
+        <h3>Contact &amp; Booking</h3>
+        <p class="muted">Send this page to clients as a preview. For actual bookings, use the contact details below or request a tailored quote.</p>
+        <form onsubmit="event.preventDefault(); alert('Thanks — contact request received (demo).')" style="display:grid;gap:0.6rem;margin-top:0.75rem">
+          <input placeholder="Your name" required style="padding:0.6rem;border-radius:8px;border:1px solid #e6e9ef">
+          <input placeholder="Email or phone" required style="padding:0.6rem;border-radius:8px;border:1px solid #e6e9ef">
+          <textarea placeholder="Message / group size / dates" rows="4" style="padding:0.6rem;border-radius:8px;border:1px solid #e6e9ef"></textarea>
+          <div style="display:flex;gap:0.5rem">
+            <button class="btn btn-primary" type="submit">Send Request</button>
+            <button class="btn btn-outline" type="button" onclick="downloadPDF()">Download as PDF</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div style="max-width:1100px;margin:0 auto;color:var(--muted);font-size:0.95rem">© <span id="yr"></span> Pakistan Hill Tours — Prepared for presentation. Images: placeholders — replace with your photos in <code>images/</code> folder.</div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Simple client-side gate (not secure): reveals the page when password matches or demo clicked
+    const gate = document.getElementById('gate');
+    const openBtn = document.getElementById('openBtn');
+    const demoBtn = document.getElementById('demoBtn');
+    openBtn.addEventListener('click', ()=>{
+      const val = document.getElementById('pw').value.trim();
+      if(val === 'travel2025'){
+        gate.style.display='none';
+      } else {
+        alert('Wrong password — try the demo or use the provided preview password.');
+      }
+    });
+    demoBtn.addEventListener('click', ()=>{ gate.style.display='none'; });
+
+    // Small helper: fake PDF download (client-side print)
+    function downloadPDF(){
+      window.print();
+    }
+  </script>
+
+  <!-- INSTRUCTIONS (inside file):
+     1) Save this file as tour.html
+     2) Create an 'images' folder next to tour.html and add these images (recommended sizes):
+        - hero.jpg (1200x700)
+        - murree.jpg, naran.jpg, kashmir.jpg, other.jpg (1200x800)
+        - gallery1.jpg ... gallery6.jpg (800x600)
+     3) Open tour.html in your browser. By default a preview gate will appear.
+     4) Share the file (or ZIP the folder with images) with clients. The password field is client-side only — for simple privacy when sharing via email/USB.
+
+     Want me to:
+       - customize copy (company name, prices) inside the file?
+       - replace placeholders with your uploaded photos and your logo?
+       - prepare a downloadable ZIP with images embedded and a ready PDF?  
+  -->
+</body>
+</html>
